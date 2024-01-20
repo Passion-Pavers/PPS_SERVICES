@@ -3,7 +3,7 @@ WORKDIR /app
 EXPOSE 8080
 EXPOSE 8081
 COPY ./*.csproj ./
-RUN dotnet restore 
+RUN dotnet restore ./
 COPY . ./
 
 RUN dotnet publish -c Release -o out
