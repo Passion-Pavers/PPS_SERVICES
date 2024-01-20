@@ -3,7 +3,8 @@ WORKDIR /app
 EXPOSE 8080
 EXPOSE 8081
 COPY ./* ./
-RUN dotnet restore ./
+COPY ./../PP.Services.sln ./
+RUN dotnet restore 
 COPY . ./
 
 RUN dotnet publish -c Release -o out
