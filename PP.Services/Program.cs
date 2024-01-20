@@ -21,6 +21,8 @@ namespace PP.Services
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             builder.Services.AddSwaggerGen();
+            builder.Services.AddCors();
+
 
             var app = builder.Build();
 
@@ -32,6 +34,12 @@ namespace PP.Services
             }
 
             app.UseHttpsRedirection();
+            app.UseCors(options =>            
+                options.WithOrigins("http://localhost")
+                .AllowAnyHeader()
+                .SetIsOriginAllowed(origin => true)
+                .AllowAnyMethod()
+            );
 
             app.UseAuthorization();
 

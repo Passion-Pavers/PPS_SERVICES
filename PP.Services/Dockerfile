@@ -22,4 +22,4 @@ RUN dotnet publish "./PP.Services.csproj" -c $BUILD_CONFIGURATION -o /app/publis
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "PP.Services.dll"]
+ENTRYPOINT ["dotnet", "PP.Services.exe"]
