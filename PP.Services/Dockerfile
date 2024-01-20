@@ -3,7 +3,9 @@ WORKDIR /app
 EXPOSE 8080
 EXPOSE 8081
 COPY ./* ./
+ls
 COPY ./../PP.Services.sln ./
+ls
 RUN dotnet restore 
 COPY . ./
 
