@@ -17,9 +17,9 @@ namespace PP.Services.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> PostString([FromBody] string value)
+        public async Task<IActionResult> PostString([FromBody] TestInput value)
         {
-            var entity = new Test { textboxname = value };
+            var entity = new Test { textboxname = value.textboxname };
 
             _context.StringEntities.Add(entity);
             await _context.SaveChangesAsync();
