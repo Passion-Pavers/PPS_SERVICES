@@ -9,9 +9,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FAC0DE43-4724-45AF-9C44-22B8A913570F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PP.SampleCRUDService", "PP.SampleCRUDService\PP.SampleCRUDService.csproj", "{A56950E4-F6E9-4C01-AC24-7506B4F759A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PP.SampleCRUDService", "PP.SampleCRUDService\PP.SampleCRUDService.csproj", "{A56950E4-F6E9-4C01-AC24-7506B4F759A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PP.AuthService", "PP.AuthService\PP.AuthService.csproj", "{2F3C4976-455F-4C33-BDE2-161076A7B8AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PP.AuthService", "PP.AuthService\PP.AuthService.csproj", "{2F3C4976-455F-4C33-BDE2-161076A7B8AD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9F351D59-689B-48C0-9FCB-B90DE07731EB}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
