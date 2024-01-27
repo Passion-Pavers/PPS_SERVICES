@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PP.SampleCRUDService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c97966377bea40dc5ad843c6e848a7189547332a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6afbb6364787ea3d7db71b0055b3efdc731cc8fb")]
 [assembly: System.Reflection.AssemblyProductAttribute("PP.SampleCRUDService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PP.SampleCRUDService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

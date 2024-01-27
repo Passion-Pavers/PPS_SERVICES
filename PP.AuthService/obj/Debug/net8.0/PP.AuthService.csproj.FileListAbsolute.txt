@@ -116,3 +116,4 @@ D:\PassionPavers\PassionPavers\PP.AuthService\bin\Debug\net8.0\ru\Microsoft.Code
 D:\PassionPavers\PassionPavers\PP.AuthService\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\PassionPavers\PassionPavers\PP.AuthService\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\PassionPavers\PassionPavers\PP.AuthService\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\PassionPavers\PassionPavers\PP.AuthService\obj\Debug\net8.0\PP.AuthService.sourcelink.json

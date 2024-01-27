@@ -30,16 +30,26 @@ namespace PP.SampleCRUDService.BusinessService
             return _mapper.Map<ApplicationDto>(application);
         }
 
-        public async Task<CreateApplicationResponseDto> AddApplication(CreateApplicationDto createDto)
+        public async Task<CreateApplicationResponseDto> AddApplication(CreateApplicationDto createDto, string userName)
         {
-            var application = _mapper.Map<Application>(createDto);
+            var application = _mapper.Map<Application>(createDto, opt =>
+            {
+                opt.Items.Add("CreatedBy", userName);
+                opt.Items.Add("ModifiedBy", userName);
+
+            });
             await _applicationRepository.AddAsync(application);
             return _mapper.Map<CreateApplicationResponseDto>(application);
         }
 
-        public async Task UpdateApplication(UpdateApplicationDto updateDto)
+        public async Task UpdateApplication(UpdateApplicationDto updateDto, string userName)
         {
-            var application = _mapper.Map<Application>(updateDto);
+            var application = _mapper.Map<Application>(updateDto, opt =>
+            {
+                opt.Items.Add("CreatedBy", userName);
+                opt.Items.Add("ModifiedBy", userName);
+
+            });
 
             await _applicationRepository.UpdateAsync(application);
         }

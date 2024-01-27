@@ -33,6 +33,9 @@ namespace PP.SampleCRUDService.Repository
         public async Task UpdateAsync(Application application)
         {
             _dbContext.Entry(application).State = EntityState.Modified;
+            _dbContext.Entry(application).Property(e => e.CreatedOn).IsModified = false;
+            _dbContext.Entry(application).Property(e => e.CreatedBy).IsModified = false;
+
             await _dbContext.SaveChangesAsync();
         }
 

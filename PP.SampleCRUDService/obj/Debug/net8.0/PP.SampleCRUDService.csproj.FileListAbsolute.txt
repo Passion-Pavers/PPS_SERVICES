@@ -112,3 +112,4 @@ D:\PassionPavers\PassionPavers\PP.SampleCRUDService\bin\Debug\net8.0\Microsoft.I
 D:\PassionPavers\PassionPavers\PP.SampleCRUDService\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\PassionPavers\PassionPavers\PP.SampleCRUDService\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 D:\PassionPavers\PassionPavers\PP.SampleCRUDService\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+D:\PassionPavers\PassionPavers\PP.SampleCRUDService\obj\Debug\net8.0\PP.SampleCRUDService.sourcelink.json
