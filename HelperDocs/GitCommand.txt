@@ -1,0 +1,26 @@
+#Below Commands to push a new folder to git remote
+
+# Navigate to your local folder
+cd /path/to/your/local/folder
+
+# Initialize a new Git repository
+git init
+
+# Add files to the staging area and commit
+git add .
+git commit -m "Initial commit"
+
+# Create a new branch
+git branch new-branch-name
+
+# Switch to the new branch
+git checkout new-branch-name
+
+# Alternatively, create and switch to the new branch in one step
+# git checkout -b new-branch-name
+
+# Add a remote repository (replace <remote-repository-url> with the actual URL)
+git remote add origin <remote-repository-url>
+
+# Push your local branch to the remote repository
+git push -u origin new-branch-name
