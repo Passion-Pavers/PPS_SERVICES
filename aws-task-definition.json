@@ -1,5 +1,5 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:570338923786:task-definition/sample-app:8",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:570338923786:task-definition/sample-app:8", 
     "containerDefinitions": [
         {
             "name": "pp-app",
