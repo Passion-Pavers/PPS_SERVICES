@@ -1,0 +1,6 @@
+@PP.SampleCRUDService_HostAddress = http://localhost:5109
+
+GET {{PP.SampleCRUDService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

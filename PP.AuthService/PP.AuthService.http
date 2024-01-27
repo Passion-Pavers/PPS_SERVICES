@@ -1,0 +1,6 @@
+@PP.AuthService_HostAddress = http://localhost:5219
+
+GET {{PP.AuthService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

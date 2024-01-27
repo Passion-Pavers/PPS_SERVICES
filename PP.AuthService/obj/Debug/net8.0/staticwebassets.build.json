@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "VKPN4HPv6vasy2cWASlJr8dnm2oTaIyJljgHbKlYx9o=",
+  "Source": "PP.AuthService",
+  "BasePath": "_content/PP.AuthService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
