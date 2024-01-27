@@ -3,6 +3,7 @@ WORKDIR /app
 EXPOSE 8080
 EXPOSE 8081
 COPY ./*.csproj ./
+COPY ../*.sln ./
 RUN dotnet restore 
 COPY . ./
 
