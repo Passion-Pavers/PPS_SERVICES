@@ -1,3 +1,4 @@
+
 using Microsoft.EntityFrameworkCore;
 using PP.Services.Data;
 using System.Configuration;
@@ -12,10 +13,11 @@ namespace PP.Services
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-               builder.WebHost.UseKestrel(serverOptions =>
+	            builder.WebHost.UseKestrel(serverOptions =>
     {
         serverOptions.ListenAnyIP(5000);
     });
+
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -24,6 +26,8 @@ namespace PP.Services
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             builder.Services.AddSwaggerGen();
+            builder.Services.AddCors();
+
 
             var app = builder.Build();
 
@@ -35,6 +39,12 @@ namespace PP.Services
             }
 
             app.UseHttpsRedirection();
+            app.UseCors(options =>            
+                options.WithOrigins("http://ec2-3-85-17-0.compute-1.amazonaws.com")
+                .AllowAnyHeader()
+                .SetIsOriginAllowed(origin => true)
+                .AllowAnyMethod()
+            );
 
             app.UseAuthorization();
 
