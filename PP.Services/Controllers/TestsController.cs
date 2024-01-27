@@ -22,8 +22,7 @@ namespace PP.Services.Controllers
         {
             var entity = new Test { textboxname = value.textboxname };
 
-            Logger.Logger logger = new Logger.Logger();
-            logger.Log(value);
+            
 
             _context.StringEntities.Add(entity);
             await _context.SaveChangesAsync();
