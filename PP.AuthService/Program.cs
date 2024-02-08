@@ -59,7 +59,7 @@ namespace PP.AuthService
 
 
             app.MapControllers();
-            ApplyMigration(app);
+           // ApplyMigration(app);
             app.Run();
         }
 

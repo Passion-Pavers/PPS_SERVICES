@@ -1,0 +1,17 @@
+version: '3.4'
+
+services:
+   
+  pp.authservice:
+    image: ${DOCKER_REGISTRY-}ppauthservice
+    build:
+      context: .
+      dockerfile: PP.AuthService/Dockerfile
+        
+
+  pp.samplecrudservice:
+    image: ${DOCKER_REGISTRY-}ppsamplecrudservice
+    build:
+      context: .
+      dockerfile: PP.SampleCRUDService/Dockerfile
+
