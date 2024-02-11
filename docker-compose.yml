@@ -14,7 +14,8 @@ services:
     networks:
       - backend
 
-  pp-sample-crud-service:
+
+backend  pp-sample-crud-service:
     container_name: pp-sample-crud-service
     image: pp-sample-crud-service
     build:
