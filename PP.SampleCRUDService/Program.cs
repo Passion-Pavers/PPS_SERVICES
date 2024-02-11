@@ -32,6 +32,7 @@ builder.WebHost.UseKestrel(serverOptions =>
 
             builder.Services.AddScoped<IApplicationRepository, ApplicationRepository>();
             builder.Services.AddScoped<IApplicationService, ApplicationService>();
+	    builder.Services.AddCors();
 
             builder.Services.AddSwaggerGen(option =>
             {
@@ -74,6 +75,12 @@ builder.WebHost.UseKestrel(serverOptions =>
             }
 
             app.UseHttpsRedirection();
+	    app.UseCors(options =>
+    options.WithOrigins("http://localhost")
+    .AllowAnyHeader()
+    .SetIsOriginAllowed(origin => true)
+    .AllowAnyMethod()
+);
 
             app.UseAuthentication();
 

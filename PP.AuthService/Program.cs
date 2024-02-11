@@ -27,7 +27,7 @@ builder.WebHost.UseKestrel(serverOptions =>
             builder.Services.AddIdentity<Users, Roles>()
                 .AddEntityFrameworkStores<AppDbContext>()
                 .AddDefaultTokenProviders();
-
+            builder.Services.AddCors();
             builder.Services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -57,6 +57,12 @@ builder.WebHost.UseKestrel(serverOptions =>
             }
 
             app.UseHttpsRedirection();
+	    app.UseCors(options =>
+    options.WithOrigins("http://localhost")
+    .AllowAnyHeader()
+    .SetIsOriginAllowed(origin => true)
+    .AllowAnyMethod()
+);
 
             app.UseAuthorization();
 
