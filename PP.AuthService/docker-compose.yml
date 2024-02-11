@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  pp-auth-service:
+    container_name: pp-auth-service
+    image: pp-auth-service
+    build:
+      context: .
+      dockerfile: ./PP.AuthService/Dockerfile
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+      - "5000:5000"
+    networks:
+      - backend
+
+  pp-sample-crud-service:
+    container_name: pp-sample-crud-service
+    image: pp-sample-crud-service
+    build:
+      context: .
+      dockerfile: ./PP.SampleCRUDService/Dockerfile
+    ports:
+      - "8090:8090" # Assuming this service listens on port 8090 internally
+      - "5001:5001"
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
