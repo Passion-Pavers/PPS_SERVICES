@@ -16,6 +16,11 @@ namespace PP.AuthService
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.WebHost.UseKestrel(serverOptions =>
+            {
+                serverOptions.ListenAnyIP(5000);
+            });
+
             // Add services to the container.
 
             builder.Services.AddDbContext<AppDbContext>(options =>

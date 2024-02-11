@@ -17,12 +17,16 @@ namespace PP.SampleCRUDService
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-
+            builder.WebHost.UseKestrel(serverOptions =>
+            {
+                serverOptions.ListenAnyIP(5001);
+            });
             // Add services to the container.
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
+
             builder.Services.AddDbContext<AppDbContext>(options =>
                     options.UseNpgsql(builder.Configuration.GetConnectionString("CrudConnectionString")));
             builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
