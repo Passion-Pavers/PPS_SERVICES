@@ -12,8 +12,8 @@ using PP.AuthService.Data;
 namespace PP.AuthService.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240127112057_DBSetup")]
-    partial class DBSetup
+    [Migration("20240218060242_InitialCreate12")]
+    partial class InitialCreate12
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

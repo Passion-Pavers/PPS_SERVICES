@@ -1,32 +1,59 @@
-version: '3.8'
+version: '3.4'
 
 services:
-  pp-auth-service:
-    container_name: pp-auth-service
+
+  ApplicationDb:
+    container_name: postgresDB
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=pass123
+      - POSTGRES_DB=PassionPavers.Application
+      - POSTGRES_HOST = 127.0.0.1
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+    networks:
+      - db
+    restart: unless-stopped
+ 
+  AuthDb:
+    container_name: postgresAuthDB
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=pass123
+      - POSTGRES_DB=PassionPavers.Auth
+      - POSTGRES_HOST = 127.0.0.1
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+  
+  pp.authservice:
     image: pp-auth-service
     build:
       context: .
-      dockerfile: ./PP.AuthService/Dockerfile
-    ports:
-      - "8080:8080"
-      - "8081:8081"
+      dockerfile: PP.AuthService/Dockerfile
+    ports:     
       - "5000:5000"
-    networks:
-      - backend
+    depends_on:
+       - AuthDb
 
-
-  pp-sample-crud-service:
-    container_name: pp-sample-crud-service
+  pp.samplecrudservice:
     image: pp-sample-crud-service
     build:
       context: .
-      dockerfile: ./PP.SampleCRUDService/Dockerfile
-    ports:
-      - "8090:8090" # Assuming this service listens on port 8090 internally
-      - "5001:5001"
-    networks:
-      - backend
+      dockerfile: PP.SampleCRUDService/Dockerfile
 
 networks:
+  db:
+    driver: bridge
+
   backend:
     driver: bridge
+
+volumes:
+  db_data:

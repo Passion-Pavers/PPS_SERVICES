@@ -89,7 +89,7 @@ namespace PP.AuthService.Serivces
                 var result = await _userManager.CreateAsync(user, registrationRequestDto.Password);
                 if (result.Succeeded)
                 {
-                    var userToReturn = _appDbContext.Users.First(u => u.UserName == registrationRequestDto.Email);
+                    var userToReturn = _appDbContext.Users.First(u => u.UserName ==  registrationRequestDto.Email);
 
                     UserDto userDto = new()
                     {
