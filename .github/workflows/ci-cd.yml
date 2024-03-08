@@ -15,7 +15,8 @@ jobs:
       
       - run: sudo apt-get install git -y
       - run: git clone https://github.com/Passion-Pavers/PPS_SERVICES.git
-      - run: cd PPS_SERVICES/PPS_SERVICES
+      - run: ls
+      - run: cd PPS_SERVICES
       - run: ls
       - run: pwd
       
