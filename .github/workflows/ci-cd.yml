@@ -13,9 +13,9 @@ jobs:
     steps:
       
       
-      - run: pwd
-      - run: ls 
-      - run: cp -r ./* ./
+      - run: pwd;ls
+      
+      - run: cp -r ./docker-compose.yml ./
       - run: ls 
       
       - name: copy files to target server via scp
