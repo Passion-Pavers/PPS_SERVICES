@@ -27,7 +27,7 @@ jobs:
           username: ${{ secrets.DEPLOY_USERNAME }}
           port: 22
           key: ${{ secrets.DEPLOY_KEY }}
-          source: "./docker-compose.yml"
+          source: "./*"
           target: "./user"
       
       
