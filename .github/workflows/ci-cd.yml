@@ -16,8 +16,8 @@ jobs:
       - run: sudo apt-get install git -y
       - run: git clone https://github.com/Passion-Pavers/PPS_SERVICES.git
       - run: cd PPS_SERVICES
-      - run: cp ./docker-compose.yml .
-      - run: ls 
+      - run: ls
+      - run: pwd
       
       - name: copy files to target server via scp
         uses: appleboy/scp-action@v0.1.3
