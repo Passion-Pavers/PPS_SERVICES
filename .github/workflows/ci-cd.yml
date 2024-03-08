@@ -8,12 +8,13 @@ on:
 jobs:
   deploy_via_ssh:
     
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     
     steps:
       
       
-      - run: pwd;ls
+      - run: sudo apt-get install git -y
+      - run: git clone https://github.com/Passion-Pavers/PPS_SERVICES.git
       
       - run: cp -r ./docker-compose.yml ./
       - run: ls 
