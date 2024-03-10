@@ -22,7 +22,7 @@ jobs:
           instance-ids: ${{ secrets.INSTANCE_ID }}
 
           working-directory: /root/user/backend/PPS_SERVICES
-          command: docker-compose up -d
+          command: docker compose up -d
           comment: Deployed successfully
 
       # Catch SSM outputs
