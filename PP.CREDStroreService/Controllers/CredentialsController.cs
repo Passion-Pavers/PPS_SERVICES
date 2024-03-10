@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PP.CREDStroreService.BusinessService.Contract;
 using PP.CREDStroreService.Models.DbEntities;
@@ -9,6 +10,7 @@ using System.Security.Claims;
 namespace PP.CREDStroreService.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
     public class CredentialsController : ControllerBase
     {
