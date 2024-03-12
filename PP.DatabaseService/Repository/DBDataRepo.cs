@@ -179,5 +179,16 @@ namespace PP.DatabaseService.Repository
 
             return tables;
         }
+
+        //Create a NewDataBasse
+        //Create a DBLink in the new Database
+        //Clone all the tables with data from the source to destination database using Dblink
+
+
+        //CreateDBLink
+        //SelectDBLink
+        //Create table using dblink
+        //Copy data from the source to destinationtable
+        //Disconnect the DBLink
     }
 }

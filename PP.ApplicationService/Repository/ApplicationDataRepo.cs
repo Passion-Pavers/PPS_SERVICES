@@ -18,5 +18,36 @@ namespace PP.ApplicationService.Repository
         {
             return await _dbContext.Applications.Where(x => x.IsActive == true).ToListAsync();
         }
+
+        public async Task AddApplicationAsync(Application application)
+        {
+            _dbContext.Applications.Add(application);
+            await _dbContext.SaveChangesAsync();
+        }
+
+
+        public async Task<string> GetAppConfigJson(int appID, int subAppID)
+        {
+            string? appConfig = string.Empty;
+
+            if (subAppID != 0)
+            {
+                appConfig =await _dbContext.SubApps
+                    .Where(s => s.SubAppID == subAppID)
+                    .Select(s => s.AppConfigJson)
+                    .FirstOrDefaultAsync();
+            }
+
+            if (string.IsNullOrEmpty(appConfig))
+            {
+                // If SubApp not found, get AppConfigJSON from parent Application
+                appConfig = await _dbContext.Applications
+                    .Where(a => a.Id == appID)
+                    .Select(a => a.AppConfigJson)
+                    .FirstOrDefaultAsync();
+            }
+
+            return appConfig;
+        }
     }
 }
